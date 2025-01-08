@@ -30,7 +30,7 @@ class Program
 
     static void Main()
     {
-        var connectionString = "Server=localhost,1433;Database=tempdb;User Id=sa;Password=Hydrogen2@$;TrustServerCertificate=True;";
+        var connectionString = "Server=localhost,1433;Database=tempdb;User Id=sa;Password=xxxxxx;TrustServerCertificate=True;";
         var userTable = new DbTable<User>(connectionString);
 
         var query1 = userTable.Where(user => user.Age > 18).Select(user => new { user.Name });
@@ -38,7 +38,7 @@ class Program
         var query3 = userTable.Where(user => user.Age > 18 && user.Name == "Anik Banerjee").Select(user => user);
 
         var users = query3.ToList();
-        
+
     }
 }
 
